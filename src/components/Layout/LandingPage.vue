@@ -1,25 +1,6 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import Navbar from '@/components/Navbar.vue'
-
-const showBorder = ref(false)
-
-function handleShowBorder(val: boolean) {
-  showBorder.value = val
-  console.log('showBorder in Layout1:', val)
-}
-</script>
+<script></script>
 
 <template>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-4 w-full">
-    <Navbar @update:showBorder="handleShowBorder" />
-  </div>
-  <div
-    v-if="showBorder"
-    class="absolute left-0 right-0 top-0 h-[850px] sm:h-[650px] z-40 backdrop-blur-xs"
-    style="pointer-events: none"
-  ></div>
-
   <!-- Background Circle Animation Web -->
   <div class="flex justify-center w-full overflow-hidden hidden sm:inline">
     <div class="max-h-[1600px]">

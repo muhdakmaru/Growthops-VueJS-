@@ -12,39 +12,41 @@
       <div>
         <button @click="openMenu" class="flex items-center cursor-pointer">
           <transition name="fade" mode="out-in">
-            <span v-if="!showBorder" key="menu" class="flex items-center">
-              <span
-                class="font-bold text-[14px] leading-[100%] tracking-normal text-right uppercase text-[#F5F5F5] pe-2 hidden sm:inline"
-              >
-                Menu
-              </span>
-              <img
-                src="@/assets/Icon/button-icon.png"
-                alt="Icon"
-                width="40"
-                height="40"
-                class="transition-opacity duration-300"
-              />
-            </span>
-            <span v-else key="close" class="flex items-center">
-              <span
-                class="font-bold text-[14px] leading-[100%] tracking-normal text-right uppercase text-[#F5F5F5] pe-2 hidden sm:inline"
-              >
-                Close
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="size-6 transition-opacity duration-300"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd"
+            <div class="cursor-pointer hover:opacity-80">
+              <span v-if="!showBorder" key="menu" class="flex items-center">
+                <span
+                  class="font-bold text-[14px] leading-[100%] tracking-normal text-right uppercase text-[#F5F5F5] pe-2 hidden sm:inline"
+                >
+                  Menu
+                </span>
+                <img
+                  src="@/assets/Icon/button-icon.png"
+                  alt="Icon"
+                  width="40"
+                  height="40"
+                  class="transition-opacity duration-300"
                 />
-              </svg>
-            </span>
+              </span>
+              <span v-else key="close" class="flex items-center">
+                <span
+                  class="font-bold text-[14px] leading-[100%] tracking-normal text-right uppercase text-[#F5F5F5] pe-2 hidden sm:inline"
+                >
+                  Close
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6 transition-opacity duration-300"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
           </transition>
         </button>
       </div>
@@ -54,23 +56,23 @@
   <div v-if="showBorder">
     <div class="justify-end sm:pe-16 md:pe-20 grid gap-4 text-end w-full p-4 sm:p-6">
       <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase"
+        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
         >Services</span
       >
       <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase"
+        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
         >Work</span
       >
       <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase"
+        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
         >Insights</span
       >
       <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase"
+        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
         >Careers</span
       >
       <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase"
+        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
         >Contact</span
       >
     </div>

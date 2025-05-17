@@ -1,10 +1,12 @@
-<script setup>
+<script setup lang="ts">
+import Navbar from '@/components/Navbar.vue'
 import LandingPage from '@/components/Layout/LandingPage.vue'
 import Growthops from '@/components/Layout/Growthops.vue'
 import BusinessPage from '@/components/Layout/BusinessPage.vue'
 import Results from '@/components/Layout/Results.vue'
 import ClientReview from '@/components/Layout/ClientReview.vue'
-// import Layout2 from '@/components/Layout/Layout2.vue'
+import Company from '@/components/Layout/Company.vue'
+import Footer from '@/components/Layout/Footer.vue'
 
 import { onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -12,6 +14,12 @@ import { useRouter } from 'vue-router'
 const show = ref(true)
 const showMain = ref(false)
 const router = useRouter()
+
+const showBorder = ref(false)
+
+function handleShowBorder(val: boolean) {
+  showBorder.value = val
+}
 
 onMounted(() => {
   setTimeout(() => {
@@ -30,12 +38,16 @@ watch(show, (val) => {
 </script>
 
 <template>
-  <!-- <header>
-    <Layout1 />
-  </header>
+  <!--  NavBar & Blur Effet  -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-4 w-full">
+    <Navbar @update:showBorder="handleShowBorder" />
+  </div>
 
-  <div>
-  </div> -->
+  <div
+    v-if="showBorder"
+    class="absolute left-0 right-0 top-0 h-[850px] sm:h-[800px] z-40 backdrop-blur-xs"
+    style="pointer-events: none"
+  ></div>
 
   <div>
     <!--  Growthops Transition  -->
@@ -85,9 +97,18 @@ watch(show, (val) => {
         <Results />
       </div>
 
-      <div>
+      <div class="pb-20">
         <ClientReview />
       </div>
+
+      <div class="pb-20">
+        <Company />
+      </div>
+    </div>
+
+    <!-- Main Page Footer -->
+    <div>
+      <Footer />
     </div>
   </div>
 </template>
