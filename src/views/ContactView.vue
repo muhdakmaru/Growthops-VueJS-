@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar.vue'
 import ContactForm from '@/components/Layout/ContactForm.vue'
 import OfficeLocation from '@/components/Layout/OfficeLocation.vue'
 import Footer from '@/components/Layout/Footer.vue'
+import Testing from '@/components/Layout/testing.vue'
 
 const showBorder = ref(false)
 
@@ -13,7 +14,7 @@ function handleShowBorder(val: boolean) {
 }
 </script>
 <template>
-  <div class="">
+  <div class="relative">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-4 w-full">
       <Navbar @update:showBorder="handleShowBorder" />
     </div>
@@ -21,7 +22,7 @@ function handleShowBorder(val: boolean) {
 
   <div
     v-if="showBorder"
-    class="absolute left-0 right-0 top-0 h-[720px] sm:h-[760px] z-40 backdrop-blur-xs"
+    class="absolute left-0 right-0 top-0 h-[770px] sm:h-[760px] z-40 backdrop-blur-xs"
     style="pointer-events: none"
   ></div>
 
