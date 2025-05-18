@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Contact from '../views/ContactView.vue'
+import ErrorPage from '@/views/ErrorPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: ErrorPage,
+    },
     {
       path: '/',
       name: 'home',
@@ -19,10 +25,10 @@ const router = createRouter({
       component: Contact,
     },
   ],
-  // scrollBehavior() {
-  //   // Always scroll to top
-  //   return { top: 0, left: 0 }
-  // },
+  scrollBehavior() {
+    // Always scroll to top
+    return { top: 0, left: 0 }
+  },
 })
 
 export default router

@@ -91,7 +91,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="flex flex-col items-center justify-center mt-60 sm:mt-80">
+    <div class="flex flex-col items-center justify-center mt-80">
       <router-link to="/contact-us">
         <button
           class="cursor-pointer bg-[#33FF85] w-[177px] h-[54px] rounded-[48px] py-4 px-10 font-bold text-lg flex items-center justify-center transition-all duration-200 hover:bg-[#28cc6a] hover:shadow-lg"

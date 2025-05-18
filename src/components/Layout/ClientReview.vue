@@ -68,7 +68,9 @@ const options = [
       <div class="w-[50px] h-[200px] flex flex-col justify-start items-center">
         <img src="@/assets/Images/text-symbol.svg" alt="text symbol" class="ms-2 mt-2" />
       </div>
-      <div class="w-[600px] sm:w-[1000px] h-[200px] flex flex-col justify-start ps-5 sm:ps-15">
+      <div
+        class="w-[600px] sm:w-[1000px] h-[200px] flex flex-col justify-start ps-5 sm:ps-15 mr-10 sm:mr-0"
+      >
         <span class="font-medium text-[20px] sm:text-[24px] text-[#F5F5F5] mr-8">
           {{ options.find((opt) => opt.type === active)?.text }}
         </span>

@@ -39,13 +39,15 @@ watch(show, (val) => {
 
 <template>
   <!--  NavBar & Blur Effet  -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-4 w-full">
-    <Navbar @update:showBorder="handleShowBorder" />
+  <div class="relative">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-3 sm:p-6 w-full pt-2 sm:pt-5">
+      <Navbar @update:showBorder="handleShowBorder" :contactPage="false" />
+    </div>
   </div>
 
   <div
     v-if="showBorder"
-    class="absolute left-0 right-0 top-0 h-[850px] sm:h-[800px] z-40 backdrop-blur-xs"
+    class="absolute left-0 right-0 top-0 h-[720px] sm:h-[800px] z-40 backdrop-blur-md"
     style="pointer-events: none"
   ></div>
 
@@ -81,15 +83,15 @@ watch(show, (val) => {
 
     <!-- Main Page Body -->
     <div>
-      <div class="pb-50 hidden sm:block">
+      <div class="pt-30 pb-50 hidden sm:block">
         <Growthops class="" />
       </div>
 
-      <div class="pb-0 sm:pb-35">
+      <div class="pb-10 sm:pb-35 pt-10 sm:pt-0">
         <BusinessPage />
       </div>
 
-      <div class="block sm:hidden pb-100">
+      <div class="block sm:hidden pb-60">
         <Growthops />
       </div>
 

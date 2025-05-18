@@ -18,16 +18,16 @@
       </div>
     </div>
     <div
-      class="relative flex flex-col items-center text-center gap-2 text-[32px] max-w-3xl mx-auto pt-10"
+      class="relative flex flex-col items-center text-center gap-14 text-[32px] max-w-3xl mx-auto pt-10"
     >
       <div>
         <img src="@/assets/Images/landing-text.svg" alt="Icon" class="hidden sm:block" />
         <img src="@/assets/Images/landing-text-mobile.svg" alt="Icon" class="block sm:hidden" />
       </div>
-      <div class="mt-15 text-[20px] sm:text-[32px]">
+      <div class="text-[20px] sm:text-[32px]">
         <span>this is</span>
       </div>
-      <div class="mt-15">
+      <div class="">
         <p
           class="font-extrabold text-[36px] sm:text-[96px] leading-[100%] tracking-[-0.01em] text-center whitespace-nowrap bg-gradient-to-r from-[#33FFF3] via-[#FF33F6] via-[#FFD633] via-[#33FF57] via-[#335BFF] to-[#98E0FF] bg-clip-text text-transparent animate-rgb-gradient"
         >
@@ -52,6 +52,6 @@
 }
 .animate-rgb-gradient {
   background-size: 200% 200%;
-  animation: rgb-gradient 4s ease-in-out infinite;
+  animation: rgb-gradient 3s ease-in-out infinite;
 }
 </style>

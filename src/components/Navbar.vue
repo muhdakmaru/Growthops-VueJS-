@@ -2,12 +2,20 @@
   <div class="flex justify-center">
     <div
       :class="[
-        'bg-black border-2 rounded-[64px] w-[1800px] h-[69px] flex items-center justify-between px-8 transition-colors duration-200',
+        'bg-black border-2 rounded-[64px] w-[1800px] h-[69px] flex items-center justify-between px-4 sm:px-8 transition-colors duration-200',
         !showBorder ? 'flex border-[#F5F5F514]' : 'flex border-transparent',
       ]"
     >
       <div>
-        <img src="@/assets/Icon/growthops-icon.png" alt="Icon" width="40" height="40" />
+        <router-link to="/">
+          <img
+            src="@/assets/Icon/growthops-icon.png"
+            alt="Icon"
+            width="40"
+            height="40"
+            class="transition-opacity duration-200 hover:opacity-80"
+          />
+        </router-link>
       </div>
       <div>
         <button @click="openMenu" class="flex items-center cursor-pointer">
@@ -55,26 +63,36 @@
 
   <div v-if="showBorder">
     <div class="justify-end sm:pe-16 md:pe-20 grid gap-4 text-end w-full p-4 sm:p-6">
-      <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
-        >Services</span
-      >
-      <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
-        >Work</span
-      >
-      <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
-        >Insights</span
-      >
-      <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
-        >Careers</span
-      >
-      <span
-        class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
-        >Contact</span
-      >
+      <router-link to="/services">
+        <span
+          class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
+          >Services</span
+        >
+      </router-link>
+      <router-link to="/work">
+        <span
+          class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
+          >Work</span
+        >
+      </router-link>
+      <router-link to="/inisights">
+        <span
+          class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
+          >Insights</span
+        >
+      </router-link>
+      <router-link to="/careers">
+        <span
+          class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
+          >Careers</span
+        >
+      </router-link>
+      <router-link to="/contact-us">
+        <span
+          class="font-extrabold text-[55px] sm:text-[45px] md:text-[45px] lg:text-[45px] xl:text-[65px] uppercase cursor-pointer hover:opacity-80"
+          >Contact</span
+        >
+      </router-link>
     </div>
   </div>
 </template>

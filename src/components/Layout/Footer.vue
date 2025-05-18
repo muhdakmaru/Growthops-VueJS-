@@ -1,5 +1,8 @@
 <script setup lang="ts">
-defineProps<{ redline: boolean; contactPage: boolean }>()
+withDefaults(defineProps<{ redline?: boolean; contactPage?: boolean }>(), {
+  redline: false,
+  contactPage: false,
+})
 </script>
 <template>
   <div class="">
@@ -98,7 +101,7 @@ defineProps<{ redline: boolean; contactPage: boolean }>()
     </div>
 
     <div v-if="contactPage">
-      <div class="flex flex-col justify-start items-start gap-4 p-8 text-[16px]">
+      <div class="flex flex-col justify-start items-start gap-4 p-8 text-[16px] sm:hidden">
         <div>
           <span class="text-[14px] font-semibold uppercase text-[#666666]">Asia</span>
         </div>
@@ -118,12 +121,25 @@ defineProps<{ redline: boolean; contactPage: boolean }>()
           <span>United Arab Emirates</span>
         </div>
       </div>
+
+      <!-- Only Visible for the PC Users if contactPage is TRUE -->
+      <!-- The below one if contactPage is FALSE -->
+      <!-- Quick fix, Update will come soon -->
+      <div
+        class="hidden sm:flex flex flex-wrap items-center justify-center gap-x-16 sm:gap-x-13 gap-y-6 pb-10 pt-15 sm:pt-0"
+      >
+        <button class="cursor-pointer text-white hover:opacity-80">Services</button>
+        <button class="cursor-pointer text-white hover:opacity-80">Works</button>
+        <button class="cursor-pointer text-white hover:opacity-80">Insights</button>
+        <button class="cursor-pointer text-white hover:opacity-80">Careers</button>
+        <button class="cursor-pointer text-white hover:opacity-80">Contact Us</button>
+      </div>
     </div>
 
     <!--  Footer Buttons  -->
     <div
       v-if="!contactPage"
-      class="flex flex-wrap items-center justify-center gap-x-13 gap-y-6 pb-10"
+      class="flex flex-wrap items-center justify-center gap-x-16 sm:gap-x-13 gap-y-6 pb-10 pt-15 sm:pt-0"
     >
       <button class="cursor-pointer text-white hover:opacity-80">Services</button>
       <button class="cursor-pointer text-white hover:opacity-80">Works</button>
@@ -175,6 +191,52 @@ defineProps<{ redline: boolean; contactPage: boolean }>()
     <div class="pb-6" v-if="contactPage"></div>
 
     <div v-if="!contactPage" class="pb-0 sm:pb-10">
+      <div class="flex flex-row item-center justify-center sm:justify-between p-10 pt-15">
+        <div class="hidden sm:block">
+          <p class="font-semibold text-[12px] text-[#6F7176] uppercase">
+            © Copyright GrowthOps. All rights reserved.
+          </p>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-10"
+        >
+          <div class="">
+            <a href="https://www.growthops.asia/" target="_blank" rel="noopener noreferrer">
+              <p
+                class="flex items-center font-medium text-[12px] text-[#F5F5F5] cursor-pointer hover:opacity-80 whitespace-nowrap"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline-block mr-1"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M432 320a16 16 0 0 1 16 16v112a48 48 0 0 1-48 48H80a48 48 0 0 1-48-48V112a48 48 0 0 1 48-48h112a16 16 0 0 1 0 32H80a16 16 0 0 0-16 16v336a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V336a16 16 0 0 1 16-16zm56-304H320a24 24 0 0 0-17 41l35 35-215 215a24 24 0 0 0 0 34l23 23a24 24 0 0 0 34 0l215-215 35 35a24 24 0 0 0 41-17V40a24 24 0 0 0-24-24z"
+                  />
+                </svg>
+                Go to global GrowthOps website
+              </p>
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.growthops.asia/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p class="font-medium text-[12px] text-[#F5F5F5] cursor-pointer hover:opacity-80">
+                Privacy policy
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else class="pb-0 sm:pb-5">
       <div class="flex flex-row item-center justify-center sm:justify-between p-10 pt-15">
         <div class="hidden sm:block">
           <p class="font-semibold text-[12px] text-[#6F7176] uppercase">

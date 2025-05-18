@@ -23,6 +23,7 @@ export default [
       'Technology Consulting',
       'MarTech Deployment & Partnerships',
       'Cloud Readiness & Migration',
+      'Mobile Development',
       'Custom Web Development',
       'Solution Architecture',
     ],

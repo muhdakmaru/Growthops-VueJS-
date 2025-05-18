@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <div>
+    <div class="overflow-x-hidden">
       <router-view />
     </div>
   </header>

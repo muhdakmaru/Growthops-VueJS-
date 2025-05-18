@@ -15,7 +15,7 @@ function handleShowBorder(val: boolean) {
 </script>
 <template>
   <div class="relative">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-4 w-full">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 z-50 p-3 sm:p-6 w-full pt-2 sm:pt-5">
       <Navbar @update:showBorder="handleShowBorder" />
     </div>
   </div>
@@ -28,7 +28,7 @@ function handleShowBorder(val: boolean) {
 
   <!-- Main Content Body -->
   <div>
-    <div class="pt-10 sm:pt-5 pb-40">
+    <div class="pt-10 sm:pt-0 pb-40">
       <ContactForm />
     </div>
 

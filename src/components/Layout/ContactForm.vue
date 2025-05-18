@@ -12,6 +12,10 @@ import '/node_modules/flag-icons/css/flag-icons.min.css'
 
 import { Form, Field, ErrorMessage, useForm } from 'vee-validate'
 import * as yup from 'yup'
+import { useToast } from 'vue-toast-notification'
+import 'vue-toast-notification/dist/theme-sugar.css'
+
+const $toast = useToast()
 
 const countryCodes = [
   { label: 'Malaysia +60', value: '+60', flag: 'my' },
@@ -44,19 +48,30 @@ const schema = yup.object({
 
 const { handleSubmit } = useForm({
   validationSchema: schema,
-  initialValues: {
-    agree: false,
-    // ...other initial values if needed
-  },
 })
 
-function onSubmit(values: any) {
+const onSubmit = handleSubmit((values: any, { resetForm }) => {
+  // Concatenate the selected country code with the phone number
   const fullPhone = selectedCountryCode.value + ' ' + values.phone
   const submission = { ...values, phone: fullPhone }
+
+  // Perform your form submission logic here
   console.log('Form submitted!', submission)
-  alert(JSON.stringify(submission, null, 2))
-  // Handle form submission logic here
-}
+  $toast.success('Successfully submitted!', {
+    position: 'top-right',
+    duration: 5000,
+    dismissible: true,
+    type: 'success',
+  })
+  $toast.info('Please check the console for the submitted data', {
+    position: 'top-right',
+    duration: 5000,
+    dismissible: true,
+    type: 'info',
+  })
+  resetForm()
+})
+// .
 </script>
 
 <template>
@@ -73,7 +88,7 @@ function onSubmit(values: any) {
             >
           </div>
           <div class="w-full max-w-6xl mt-10">
-            <Form :validation-schema="schema" @submit="onSubmit" class="flex flex-col gap-10">
+            <form :validation-schema="schema" @submit="onSubmit" class="flex flex-col gap-10">
               <!-- Full Name -->
               <div class="flex flex-col">
                 <label class="block font-semibold mb-1 text-[#999D9F]" for="fullname"
@@ -301,7 +316,7 @@ function onSubmit(values: any) {
                   Submit
                 </button>
               </div>
-            </Form>
+            </form>
           </div>
         </div>
       </div>
@@ -346,3 +361,5 @@ function onSubmit(values: any) {
     </div>
   </div>
 </template>
+
+<style scoped></style>
