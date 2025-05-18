@@ -1,5 +1,29 @@
 <script setup>
 import { offices } from '@/data/officeData'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+
+const isMobile = ref(false)
+
+function checkMobile() {
+  isMobile.value = window.innerWidth < 640 // Tailwind's sm breakpoint
+}
+
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile)
+})
+
+const reorderedOffices = computed(() => {
+  if (!isMobile.value) return offices
+  // Move the third office to the second position
+  const arr = offices.slice()
+  const third = arr.splice(2, 1)[0]
+  arr.splice(1, 0, third)
+  return arr
+})
 </script>
 
 <template>
@@ -15,7 +39,7 @@ import { offices } from '@/data/officeData'
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 p-6 justify-start items-center place-items-center"
       >
         <div
-          v-for="office in offices"
+          v-for="office in reorderedOffices"
           :key="office.city"
           class="relative flex flex-col justify-start items-start max-w-full sm:max-w-[420px] max-h-full sm:h-[300px] border-2 border-[#F5F5F514] rounded-3xl gap-6 px-8 py-6 shadow-inner shadow-[inset_0_4px_24px_-1px_rgba(0,0,0,0.4)] backdrop-blur-[40px]"
         >

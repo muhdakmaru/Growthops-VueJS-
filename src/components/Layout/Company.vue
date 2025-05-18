@@ -86,7 +86,7 @@ onMounted(() => {
         <img
           src="@/assets/Images/shadow-overlay-right-mobile.svg"
           alt="Left Image"
-          class="sm:hidden absolute top-0 right-0 h-[350px] top-[-320px] z-50 border-1"
+          class="sm:hidden absolute top-0 right-0 h-[350px] top-[-320px] z-50"
         />
       </div>
     </div>

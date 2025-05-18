@@ -335,7 +335,7 @@ function onSubmit(values: any) {
         <img
           src="@/assets/images/vector-contact-right-red.svg"
           alt="Vector Style Shadow"
-          class="absolute right-0 z-0 top-[-1500px] sm:top-[-900px] w-auto sm:w-[700px] h-auto"
+          class="absolute right-0 z-0 top-[-1400px] sm:top-[-900px] w-auto sm:w-[700px] h-auto"
         />
         <img
           src="@/assets/images/vector-contact-right-cyan.svg"

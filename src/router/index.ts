@@ -19,6 +19,10 @@ const router = createRouter({
       component: Contact,
     },
   ],
+  // scrollBehavior() {
+  //   // Always scroll to top
+  //   return { top: 0, left: 0 }
+  // },
 })
 
 export default router

@@ -22,13 +22,13 @@ function handleShowBorder(val: boolean) {
 
   <div
     v-if="showBorder"
-    class="absolute left-0 right-0 top-0 h-[770px] sm:h-[760px] z-40 backdrop-blur-xs"
+    class="absolute left-0 right-0 top-0 h-[700px] sm:h-[800px] z-40 backdrop-blur-xs"
     style="pointer-events: none"
   ></div>
 
   <!-- Main Content Body -->
   <div>
-    <div class="pt-10 pb-40">
+    <div class="pt-10 sm:pt-5 pb-40">
       <ContactForm />
     </div>
 
@@ -39,7 +39,7 @@ function handleShowBorder(val: boolean) {
 
   <!-- Footer -->
   <div>
-    <Footer :redline="true" />
+    <Footer :redline="true" :contactPage="true" />
   </div>
 </template>
 
