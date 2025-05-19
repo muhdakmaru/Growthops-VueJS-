@@ -63,18 +63,19 @@ const onSubmit = handleSubmit(async (values: any, { resetForm }) => {
     more: submission.more,
     subscribe: submission.subscribe ? 'Yes' : 'No',
   }
-  $toast.success('Successfully submitted and email sent!', {
-    position: 'top-right',
-    duration: 5000,
-    dismissible: true,
-    type: 'success',
-  })
   $toast.info('Check the data inside the console', {
     position: 'top-right',
     duration: 5000,
     dismissible: true,
     type: 'info',
   })
+  $toast.success('Successfully submitted and email sent!', {
+    position: 'top-right',
+    duration: 5000,
+    dismissible: true,
+    type: 'success',
+  })
+
   console.log('Form submission:', submission)
 })
 // .

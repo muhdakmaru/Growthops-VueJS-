@@ -128,11 +128,21 @@ withDefaults(defineProps<{ redline?: boolean; contactPage?: boolean }>(), {
       <div
         class="hidden sm:flex flex flex-wrap items-center justify-center gap-x-16 sm:gap-x-13 gap-y-6 pb-10 pt-15 sm:pt-0"
       >
-        <button class="cursor-pointer text-white hover:opacity-80">Services</button>
-        <button class="cursor-pointer text-white hover:opacity-80">Works</button>
-        <button class="cursor-pointer text-white hover:opacity-80">Insights</button>
-        <button class="cursor-pointer text-white hover:opacity-80">Careers</button>
-        <button class="cursor-pointer text-white hover:opacity-80">Contact Us</button>
+        <router-link to="/services">
+          <button class="cursor-pointer text-white hover:opacity-80">Services</button>
+        </router-link>
+        <router-link to="/work">
+          <button class="cursor-pointer text-white hover:opacity-80">Works</button>
+        </router-link>
+        <router-link to="/insights">
+          <button class="cursor-pointer text-white hover:opacity-80">Insights</button>
+        </router-link>
+        <router-link to="/careers">
+          <button class="cursor-pointer text-white hover:opacity-80">Careers</button>
+        </router-link>
+        <router-link to="/contact-us">
+          <button class="cursor-pointer text-white hover:opacity-80">Contact Us</button>
+        </router-link>
       </div>
     </div>
 
@@ -141,11 +151,21 @@ withDefaults(defineProps<{ redline?: boolean; contactPage?: boolean }>(), {
       v-if="!contactPage"
       class="flex flex-wrap items-center justify-center gap-x-16 sm:gap-x-13 gap-y-6 pb-10 pt-15 sm:pt-0"
     >
-      <button class="cursor-pointer text-white hover:opacity-80">Services</button>
-      <button class="cursor-pointer text-white hover:opacity-80">Works</button>
-      <button class="cursor-pointer text-white hover:opacity-80">Insights</button>
-      <button class="cursor-pointer text-white hover:opacity-80">Careers</button>
-      <button class="cursor-pointer text-white hover:opacity-80">Contact Us</button>
+      <router-link to="/services">
+        <button class="cursor-pointer text-white hover:opacity-80">Services</button>
+      </router-link>
+      <router-link to="/work">
+        <button class="cursor-pointer text-white hover:opacity-80">Works</button>
+      </router-link>
+      <router-link to="/insights">
+        <button class="cursor-pointer text-white hover:opacity-80">Insights</button>
+      </router-link>
+      <router-link to="/careers">
+        <button class="cursor-pointer text-white hover:opacity-80">Careers</button>
+      </router-link>
+      <router-link to="/contact-us">
+        <button class="cursor-pointer text-white hover:opacity-80">Contact Us</button>
+      </router-link>
     </div>
 
     <div class="flex flex-wrap items-center justify-center gap-x-12 sm:gap-x-18 gap-y-6">
