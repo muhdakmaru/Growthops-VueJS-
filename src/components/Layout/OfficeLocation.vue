@@ -100,9 +100,17 @@ const reorderedOffices = computed(() => {
     <div
       class="flex flex-row justify-start sm:justify-center ml-10 sm:ml-0 items-center pt-10 sm:pt-20"
     >
-      <div>
-        <div class="w-[150px] sm:w-full">
-          <span class="font-extrabold text-[35px] sm:text-[88px] uppercase">Keep in touch</span>
+      <div class="">
+        <div class="w-[200px] sm:w-full">
+          <span class="hidden sm:block font-extrabold text-[35px] sm:text-[88px] uppercase block"
+            >Keep in touch</span
+          >
+          <span class="font-extrabold text-[35px] sm:text-[88px] uppercase block sm:hidden"
+            >Keep</span
+          >
+          <span class="font-extrabold text-[35px] sm:text-[88px] uppercase block sm:hidden"
+            >In Touch</span
+          >
         </div>
       </div>
     </div>
