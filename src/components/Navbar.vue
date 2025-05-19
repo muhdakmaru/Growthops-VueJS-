@@ -106,7 +106,7 @@ const showBorder = ref(false)
 function openMenu() {
   showBorder.value = !showBorder.value
   emit('update:showBorder', showBorder.value)
-  console.log('Menu opened')
+  // console.log('Menu opened')
 }
 </script>
 

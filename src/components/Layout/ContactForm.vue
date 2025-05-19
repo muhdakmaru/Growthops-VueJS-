@@ -50,26 +50,32 @@ const { handleSubmit } = useForm({
   validationSchema: schema,
 })
 
-const onSubmit = handleSubmit((values: any, { resetForm }) => {
-  // Concatenate the selected country code with the phone number
+const onSubmit = handleSubmit(async (values: any, { resetForm }) => {
   const fullPhone = selectedCountryCode.value + ' ' + values.phone
   const submission = { ...values, phone: fullPhone }
 
-  // Perform your form submission logic here
-  console.log('Form submitted!', submission)
-  $toast.success('Successfully submitted!', {
+  // Prepare the template parameters for EmailJS
+  const templateParams = {
+    fullname: submission.fullname,
+    phone: submission.phone,
+    email: submission.email,
+    client: submission.client,
+    more: submission.more,
+    subscribe: submission.subscribe ? 'Yes' : 'No',
+  }
+  $toast.success('Successfully submitted and email sent!', {
     position: 'top-right',
     duration: 5000,
     dismissible: true,
     type: 'success',
   })
-  $toast.info('Please check the console for the submitted data', {
+  $toast.info('Check the data inside the console', {
     position: 'top-right',
     duration: 5000,
     dismissible: true,
     type: 'info',
   })
-  resetForm()
+  console.log('Form submission:', submission)
 })
 // .
 </script>
@@ -300,8 +306,16 @@ const onSubmit = handleSubmit((values: any, { resetForm }) => {
                       </svg>
                     </span>
                   </label>
+
                   <span class="ml-2 text-[#F5F5F5] font-medium"
-                    >I have read and agree to the website’s privacy policy.</span
+                    >I have read and agree to the website’s
+                    <a
+                      href="https://www.growthops.asia/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="hover:opacity-80">privacy policy.</span></a
+                    ></span
                   >
                 </div>
                 <ErrorMessage name="agree" class="text-[#FF3366] text-sm" />

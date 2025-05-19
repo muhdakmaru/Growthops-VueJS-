@@ -4,13 +4,12 @@ import Navbar from '@/components/Navbar.vue'
 import ContactForm from '@/components/Layout/ContactForm.vue'
 import OfficeLocation from '@/components/Layout/OfficeLocation.vue'
 import Footer from '@/components/Layout/Footer.vue'
-import Testing from '@/components/Layout/testing.vue'
 
 const showBorder = ref(false)
 
 function handleShowBorder(val: boolean) {
   showBorder.value = val
-  console.log('showBorder in Layout1:', val)
+  // console.log('showBorder in Layout1:', val)
 }
 </script>
 <template>
