@@ -1,7 +1,0 @@
-{
-  "name": "growthops-asia",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "vue-vite"
-}

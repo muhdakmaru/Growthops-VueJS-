@@ -1,9 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-import CompanyViewRight from '@/components/CompanyViewRight.vue'
-import CompanyViewLeft from '@/components/CompanyViewLeft.vue'
 import companyImages from '@/data/CompanyImages.js'
+import CompanyViewMarquee from '@/components/CompanyViewMarquee.vue'
 
 const triggerRef = ref(null)
 const startAnimation = ref(false)
@@ -53,10 +52,15 @@ onMounted(() => {
     </div>
 
     <div class="pt-10 flex flex-row items-center justify-center max-w-[2000px] mx-auto">
-      <div class="flex flex-col gap-y-8 overflow-hidden">
-        <CompanyViewRight :images="companyImages.imageFirst" :start-animation="startAnimation" />
-        <CompanyViewLeft :images="companyImages.imageSecond" :start-animation="startAnimation" />
-        <CompanyViewRight :images="companyImages.imageThird" :start-animation="startAnimation" />
+      <div class="flex flex-col overflow-hidden">
+        <CompanyViewMarquee
+          :imagesTop="companyImages.imageFirst"
+          :imagesCenter="companyImages.imageSecond"
+          :imagesBottom="companyImages.imageThird"
+          :start-animation="startAnimation"
+        />
+        <!-- <CompanyViewLeft :images="companyImages.imageSecond" :start-animation="startAnimation" />
+        <CompanyViewRight :images="companyImages.imageThird" :start-animation="startAnimation" /> -->
       </div>
     </div>
 
