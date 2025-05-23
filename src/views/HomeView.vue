@@ -53,7 +53,7 @@ watch(show, (val) => {
 
   <div>
     <!--  Growthops Transition  -->
-    <!-- <transition name="slideout-bottom" appear mode="out-in">
+    <transition name="slideout-bottom" appear mode="out-in">
       <div v-if="show" class="fixed inset-0 flex items-center justify-center bg-white z-[9999]">
         <img
           src="@/assets/Images/page-slide.png"
@@ -67,7 +67,7 @@ watch(show, (val) => {
           class="block sm:hidden w-full h-full object-cover"
         />
       </div>
-    </transition> -->
+    </transition>
 
     <!-- Landing Page need to fix Text Absolute class then can use the transition -->
     <transition name="slidein-bottom" appear>
@@ -77,9 +77,9 @@ watch(show, (val) => {
     </transition>
 
     <!-- Main Page Header -->
-    <header class="pb-10 sm:pb-20">
+    <!-- <header class="pb-10 sm:pb-20">
       <LandingPage />
-    </header>
+    </header> -->
 
     <!-- Main Page Body -->
     <div>
